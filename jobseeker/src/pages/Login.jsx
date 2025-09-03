@@ -1,0 +1,69 @@
+import React, { useState } from 'react';
+     import axios from 'axios';
+     import { useNavigate } from 'react-router-dom';
+     import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
+     import NavBar from '../components/NavBar';
+     import Footer from '../components/Footer';
+
+     const Login = () => {
+       const [credentials, setCredentials] = useState({ username: '', password: '' });
+       const [error, setError] = useState('');
+       const [isLoading, setIsLoading] = useState(false);
+       const navigate = useNavigate();
+
+       const handleChange = (e) => {
+         setCredentials({ ...credentials, [e.target.name]: e.target.value });
+         setError('');
+       };
+
+       const handleSubmit = async (e) => {
+         e.preventDefault();
+         if (!credentials.username || !credentials.password) {
+           setError('Username and password are required');
+           return;
+         }
+         setIsLoading(true);
+         try {
+           const { data } = await axios.post('http://localhost:5000/api/auth/user/login', credentials);
+           localStorage.setItem('token', data.token);
+           navigate('/submit');
+         } catch (err) {
+           setError(err.response?.data?.message || 'Login failed');
+         } finally {
+           setIsLoading(false);
+         }
+       };
+
+       return (
+         <div className="d-flex flex-column min-vh-100">
+           <NavBar />
+           <Container className="flex-grow-1 form-container">
+             <Card className="mx-auto" style={{ maxWidth: '400px' }}>
+               <Card.Body>
+                 <h2 className="text-center mb-4">User Login</h2>
+                 {error && <Alert variant="danger">{error}</Alert>}
+                 <Form onSubmit={handleSubmit}>
+                   <Form.Group className="mb-3">
+                     <Form.Label>Username</Form.Label>
+                     <Form.Control name="username" value={credentials.username} onChange={handleChange} required />
+                   </Form.Group>
+                   <Form.Group className="mb-3">
+                     <Form.Label>Password</Form.Label>
+                     <Form.Control type="password" name="password" value={credentials.password} onChange={handleChange} required />
+                   </Form.Group>
+                   <Button type="submit" variant="primary" className="w-100" disabled={isLoading}>
+                     {isLoading ? 'Logging In...' : 'Log In'}
+                   </Button>
+                 </Form>
+                 <p className="text-center mt-3">
+                   No account? <a href="/signup">Sign up</a>
+                 </p>
+               </Card.Body>
+             </Card>
+           </Container>
+           <Footer />
+         </div>
+       );
+     };
+
+     export default Login;
