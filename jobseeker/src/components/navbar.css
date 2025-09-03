@@ -1,0 +1,13 @@
+.image{
+    height: 40px;
+}
+
+
+.nav-link {
+  color: #212529 !important;  /* dark text */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: orangered !important;   /* orange on hover */
+}
