@@ -77,7 +77,7 @@ const Dashboard = () => {
                       <>
                         <p><strong>Email:</strong> {user.email || 'N/A'}</p>
                         <p><strong>Address:</strong> {user.address || 'N/A'}</p>
-                        {user.photo && <img src={`http://localhost:5000${user.photo}`} alt="Photo" className="user-photo mb-2" />}
+                        {user.photo && <img height={'250px'} width={'250px'} src={`http://localhost:5000${user.photo}`} alt="Photo" className="user-photo mb-2" />}
                         <p><strong>Experience:</strong> {user.experience || 'N/A'}</p>
                         {user.certifications && user.certifications.length > 0 && (
                           <p><strong>Certifications:</strong>
