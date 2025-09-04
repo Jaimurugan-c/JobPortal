@@ -12,7 +12,7 @@ const Footer = () => {
           <Col md={4} className="mb-3">
             <img src={logo} alt="Job Portal Logo" style={{ width: "120px" }} />
             <p className="mt-2">
-              Job Portal helps job seekers connect with recruiters easily.  
+              Team-up consltant helps job seekers connect with recruiters easily.  
               Build your career with us!
             </p>
           </Col>
@@ -21,15 +21,15 @@ const Footer = () => {
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
               <li><a href="/" className=" text-decoration-none">Home</a></li>
-              <li><a href="/jobs" className=" text-decoration-none">Jobs</a></li>
-              <li><a href="/about" className="text-decoration-none">About</a></li>
-              <li><a href="/contact" className=" text-decoration-none">Contact</a></li>
+              <li><a href="/" className=" text-decoration-none">Jobs</a></li>
+              <li><a href="/" className="text-decoration-none">About</a></li>
+              <li><a href="/" className=" text-decoration-none">Contact</a></li>
             </ul>
           </Col>
 
           <Col md={4} className="mb-3">
             <h5>Contact Us</h5>
-            <p>Email: support@jobportal.com</p>
+            <p>Email: support@teamup.com</p>
             <p>Phone: +91 98765 43210</p>
             <div className="d-flex gap-3">
               <a href="#" className="text-white"><FaFacebook /></a>
@@ -42,7 +42,7 @@ const Footer = () => {
 
         <Row>
           <Col className="text-center border-top pt-3">
-            <p className="mb-0">&copy; 2025 Job Portal. All rights reserved.</p>
+            <p className="mb-0">&copy; 2025 Job Portal. All rights reserved. Designed By jai</p>
           </Col>
         </Row>
       </Container>

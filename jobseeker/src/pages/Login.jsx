@@ -4,7 +4,7 @@ import React, { useState } from 'react';
      import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
      import NavBar from '../components/NavBar';
      import Footer from '../components/Footer';
-
+     import '../pages/login.css'
      const Login = () => {
        const [credentials, setCredentials] = useState({ username: '', password: '' });
        const [error, setError] = useState('');

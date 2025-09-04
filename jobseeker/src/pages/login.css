@@ -1,0 +1,52 @@
+
+
+.card {
+  border: 2px solid rgb(236, 215, 175);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(255, 69, 0, 0.3);
+}
+
+.card h2 {
+  color: orangered;
+  font-weight: bold;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #ff8c00; /* Dark orange for labels */
+}
+
+.form-control {
+  border: 2px solid orange;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: orangered;
+
+}
+
+.btn-primary {
+    background-color: orangered;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4);
+}
+
+a {
+  color: orangered;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
