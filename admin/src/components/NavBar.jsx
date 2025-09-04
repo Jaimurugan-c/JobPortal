@@ -1,7 +1,8 @@
 import React from 'react';
   import { Navbar, Nav, Container } from 'react-bootstrap';
   import { Link, useNavigate } from 'react-router-dom';
-
+import logo from '../assets/logo.png'
+import '../components/navbar.css'
   const NavBar = () => {
     const token = localStorage.getItem('token');
     const navigate = useNavigate();
@@ -12,9 +13,9 @@ import React from 'react';
     };
 
     return (
-      <Navbar bg="primary" variant="dark" expand="lg" className="mb-4">
+      <Navbar variant="dark" expand="lg" className="mb-4">
         <Container>
-          <Navbar.Brand as={Link} to="/">Job Portal - Admin</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/"><img className='image' src={logo}/></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
